@@ -1,0 +1,39 @@
+1. pyttsx3
+    import pyttsx3
+    engine = pyttsx3.init('sapi5/nsss')
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice', voices[1].id)
+    def speak(audio):
+        engine.say(audio)
+        engine.runAndWait()
+    speak('Hello World')
+
+2. speechRecognition
+    import speech_recognition as sr
+    r = sr.Recognizer()
+    with sr.Microphone() as source:                # use the default microphone as the audio source
+        audio = r.listen(source)                   # listen for the first phrase and extract it into audio data
+
+    try:
+        text = r.recognize_google(audio)
+        print("You said " + r.recognize(audio))    # recognize speech using Google Speech Recognition
+    except LookupError:                           # speech is unintelligible
+        print("Could not understand audio")
+
+pip install pyaudio
+pip install --upgrade pyaudio
+pip install wheel
+pip install google-api-python-client
+sudo apt-get install flac
+pip install monotonic
+pip install SpeechRecognition
+
+
+3. import wikipedia
+
+
+4. import webbrowser
+
+5. import os
+
+6. import smtplib
